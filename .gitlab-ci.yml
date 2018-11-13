@@ -40,10 +40,11 @@ maven-test:
 
 frontend-test:
     stage: test
+    # You should use default argument instead: 'test'
+    # See documentation at https://www.jhipster.tech/setting-up-ci/
+    # script:
+    #     - ./mvnw com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='test' -Dmaven.repo.local=$MAVEN_USER_HOME
     script:
-        # You should use default argument instead: 'test'
-        # See documentation at https://www.jhipster.tech/setting-up-ci/
-        # - ./mvnw com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='test' -Dmaven.repo.local=$MAVEN_USER_HOME
         - ./mvnw com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='test' -Dmaven.repo.local=$MAVEN_USER_HOME
     artifacts:
         reports:
