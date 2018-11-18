@@ -29,7 +29,7 @@ jobs:
       chmod +x mvnw
       ./mvnw clean test
     displayName: 'TESTS: backend'
-  - script: npm test
+  - script: ./mvnw com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test'
     displayName: 'TESTS: frontend'
   - script: ./mvnw verify -Pprod -DskipTests
     displayName: 'TESTS: packaging'
